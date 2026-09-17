@@ -66,6 +66,10 @@ public class Main {
                     System.out.print("Enter income amount: ");
                     double incomeAmount = scanner.nextDouble();
                     scanner.nextLine();
+                    if (incomeAmount <= 0) {
+                    System.out.println("Amount must be greater than zero.");
+                    break;
+}
 
                     System.out.print("Enter income source: ");
                     String source = scanner.nextLine();
@@ -92,6 +96,10 @@ public class Main {
                     System.out.print("Enter expense amount: ");
                     double expenseAmount = scanner.nextDouble();
                     scanner.nextLine();
+                    if (expenseAmount <= 0) {
+                    System.out.println("Amount must be greater than zero.");
+                    break;
+}
 
                     System.out.print("Enter expense category: ");
                     String category = scanner.nextLine();
@@ -133,7 +141,7 @@ public class Main {
 
                     transactionService.showFinancialSummary();
                     budgetService.showBudgetSummary();
-                    
+
                     break;
 
                 case 6:
@@ -144,6 +152,10 @@ public class Main {
                     System.out.print("Enter budget limit: ");
                     double budgetLimit = scanner.nextDouble();
                     scanner.nextLine();
+                    if (budgetLimit <= 0) {
+                    System.out.println("Budget limit must be greater than zero.");
+                    break;
+}
 
                     Budget budget = new Budget(
                             budgetCategory,
