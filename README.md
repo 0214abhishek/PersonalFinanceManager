@@ -195,7 +195,7 @@ javac -version
 ### 1. Clone the repository
 
 ```bash
-git clone 
+git clone PersonalFinanceManager
 ```
 
 ### 2. Go into the project folder
