@@ -34,6 +34,8 @@ public class BudgetService {
 
         Budget budget = findBudget(category);
 
+        // If there is no budget for this category,
+        // allow the expense.
         if (budget == null) {
             return true;
         }
@@ -66,5 +68,34 @@ public class BudgetService {
             budget.displayBudget();
         }
     }
-}
 
+    public void showBudgetSummary() {
+
+        if (budgets.isEmpty()) {
+            System.out.println("\nNo budgets have been created.");
+            return;
+        }
+
+        System.out.println("\n========== BUDGET SUMMARY ==========");
+
+        for (Budget budget : budgets) {
+
+            System.out.println("Category  : " + budget.getCategory());
+            System.out.println("Limit     : " + budget.getLimit());
+            System.out.println("Spent     : " + budget.getSpent());
+            System.out.println("Remaining : " + budget.getRemainingAmount());
+
+            if (budget.getRemainingAmount() < 0) {
+                System.out.println("Status    : Budget exceeded");
+            } 
+            else if (budget.getRemainingAmount() == 0) {
+                System.out.println("Status    : Budget fully used");
+            } 
+            else {
+                System.out.println("Status    : Within budget");
+            }
+
+            System.out.println("------------------------------------");
+        }
+    }
+}

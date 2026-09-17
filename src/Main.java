@@ -132,6 +132,8 @@ public class Main {
                 case 5:
 
                     transactionService.showFinancialSummary();
+                    budgetService.showBudgetSummary();
+                    
                     break;
 
                 case 6:
